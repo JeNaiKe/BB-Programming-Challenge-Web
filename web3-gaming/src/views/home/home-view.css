@@ -1,0 +1,48 @@
+.home-header {
+  width: 160px;
+  height: 80px;
+  font-size:30px;
+  color: #fff;
+  background: none;
+  margin: 24px;
+}
+
+.home-header h2{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-header h2:hover{
+  color: #0038FF;
+  color: #a8bafa;
+  cursor: pointer;
+}
+
+.home-header a{
+  color: #edf0f5;
+  text-decoration: none;
+}
+
+.home-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.c{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  padding-top: 8px;
+  padding-bottom: 24px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #edf0f534;
+}
+
+

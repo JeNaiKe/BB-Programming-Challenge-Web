@@ -1,0 +1,49 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100%;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    font-family: Inter,-apple-system,BlinkMacSystemFont,segoe ui,Roboto,Helvetica,Arial,sans-serif;
+    background-color: #111;
+    color: #fff;
+}
+
+.box {
+    border: 8px solid #4d6feb;
+    border-image: 
+      url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M16 0H8v4H4v4H0v8h4v4h4v4h8v-4h4v-4h4V8h-4V4h-4V0zm0 4v4h4v8h-4v4H8v-4H4V8h4V4h8z' fill='%230038FF'/%3E%3C/svg%3E")
+      8 stretch;
+}
+
+*{
+    margin: 0;
+    padding: 0;   
+}
+
+.al-l{
+    text-align: left;
+}
+.al-c{
+    text-align: center;
+}
+.al-r{
+    text-align: right;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    background-color: transparent;
+}
+::-webkit-scrollbar {
+    height: 6px;
+    background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background: var(--color-light-neutral-3);
+}
