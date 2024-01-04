@@ -10,8 +10,9 @@ Index:
 > [Missing](README.md#Missing) <br>
 
 ## How to install
-Execute `npm install` on both frontend and backend folders (web3-gaming & web3-backend) to install necessary node modules. Make sure nodejs is installed. This was done with v20.
-This is a free tier for backend, use your own CoinMarketCap API Key on `backend/src/config/coinmarketcap.config.js`.
+- Execute `npm install` on both frontend and backend folders (web3-gaming & web3-backend) to install necessary node modules. Make sure nodejs is installed. This was done with v20.
+- Configure connection of frontend to backend, using the '.env' inside the web3-gaming folder.
+- Configure backend CoinMarketCap API Key on `backend/src/config/coinmarketcap.config.js`. Free tier included
 
 ## Executing
 Have two terminals, do `cd` to their respective folder, as above, but execute `npm run start` on frontend and `npm start dev` on backend.
