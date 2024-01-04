@@ -97,6 +97,7 @@ export const FavoritedList = () => {
   
   return (
     <div className=''>
+      <h2 className="al-c">Favorites</h2>
       {loading && <p>loading...</p>}
       {error && <p>{error}</p>}
       {<FixedList favData={favData}/>} 
