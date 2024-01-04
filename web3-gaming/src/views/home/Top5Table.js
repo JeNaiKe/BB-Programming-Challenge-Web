@@ -21,7 +21,7 @@ const ConstructTable = ({data}) => (
         <tr key={index}>
             <td className='al-r'><a href={"/detail?id=" + item.id}>{item.id}</a></td>
             <td className='al-l'><a href={"/detail?id=" + item.id}>{item.name}</a></td>
-            <td className='al-c'><a href={"/detail?id=" + item.id}><img src={item.icon}/>{}</a></td>
+            <td className='al-c'><a href={"/detail?id=" + item.id}><img src={item.logo}/>{}</a></td>
             <td className='al-l'><a href={"/detail?id=" + item.id}>{item.symbol}</a></td>
             <td className='al-l'><a href={"/detail?id=" + item.id}>{(item.quote.USD.price).toFixed(2)+"$"}</a></td>
         </tr>
@@ -43,15 +43,17 @@ export const Top5Table = () => {
             try {
                 const response = await axios.get(BACKEND_URL + "/cmc/top5");
                 console.log("Obtained data from the server with success.");
-                console.log(response);
                 setData(response.data);
             } catch (error) {
+                console.log("Error fetching data from the server.");
                 console.log(error);
                 if (error.response) {
-                    setError("Error response from backend: " + error.response.data.message);
-                }else{
-                    setError("Error fetching data, check console.");
-                }
+                    if (error.response.status === 0){setError("Error connecting to backend server, check console for more.");
+                        console.log("Error connecting to backend server, maybe the .env file is not configured correctly or server is down?");
+                    }else{
+                        if (error.response.data){setError("Error response from backend: " + error.response.data.message);}
+                        else{ setError("Error response from backend: " + error.code);}}
+                }else{setError("Error fetching data, check console. " + error.code);}
             } finally {
                 setLoading(false);
             }
@@ -60,8 +62,10 @@ export const Top5Table = () => {
         fetchData();
     }, []); // Empty dependency array ensures that this effect runs only once when the component mounts
 
+    // TODO Instead of loading text (wich causles blinking) use a ghost table of the same size
     return(
         <div className=''>
+            <h3 className='al-c'>Top Five</h3>
             {loading && <p>loading...</p>}
             {error && <p>{error}</p>}
             {data && <ConstructTable data={data} />}
