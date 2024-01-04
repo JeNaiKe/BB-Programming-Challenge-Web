@@ -10,7 +10,6 @@ Index:
 
 ## How to install
 Execute `npm install` on both frontend and backend to install necessary node modules. Make sure nodejs is installed. This was done with v20.
-Create the <b>config file</b> needed for the API explained in the README.txt inside backend.
 
 ## Gallery
 The navbar is a reused component currently only for navigating back to home screen.
